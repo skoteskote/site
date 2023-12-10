@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .main-content {
+            font-family: 'Libre Baskerville', sans-serif;
+            line-height: 1.6;
+            font-size: 20px;
+            padding: 100px;
+            padding-left: 30%;
+            padding-right: 30%;
+            padding-bottom: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        pre,
+        blockquote {
+            font-size: 0.8em;
+            color: grey;
+            opacity: 0.6;
+            margin-left: 0;
+        }
+
+        a {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: grey;
+            text-decoration: none;
+            font-family: 'Libre Baskerville', sans-serif;
+        }
+
+
+        @media (max-width: 800px) {
+            .main-content {
+                flex-direction: column;
+                padding: 30px;
+                padding-top: 50px;
+                padding-bottom: 100px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/" class="back-button">&#8592;</a>
+    <div class="main-content">
+        <article>
+            {{ content }}
+        </article>
+    </div>
+</body>
+
+</html>

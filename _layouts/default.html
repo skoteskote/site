@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <title>Jakob Skote</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Raleway, sans-serif;
+            
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            padding: 100px;
+            padding-left: 20%;
+            padding-right: 20%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .image-section {
+            flex: 0 0 auto;
+            width: auto;
+            min-width: 400px;
+            max-width: 600px;
+        }
+
+        .links-section {
+            flex-grow: 1;
+            padding: 10px;
+            padding-left: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-self: flex-end;
+        }
+
+        .post-list {
+            width: 100%;
+            padding: 10px;
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 800px) {
+            .main-content {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .image-section,
+            .links-section {
+                width: 100%;
+                min-width: 0;
+                padding-left: 0px;
+            }
+            .post-list {
+                padding: 10px;
+            }
+
+            img {
+                max-width: 100%;
+                min-width: 0;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 5px 0;
+        }
+        
+        a {
+            text-decoration: underline;
+            color: #000;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-content">
+        <div class="image-section">
+            <img src="SwampBoi.webp" alt="Jakob Skote">
+        </div>
+        <div class="links-section">
+            <ul>
+                <li><a href="https://www.untold.garden/" target="_blank">studio</a> (untold garden)</li>
+                <li><a href="mailto:hej@jakobskote.com" target="_blank">email</a></li>
+                <li><a href="https://www.instagram.com/jakobskote/" target="_blank">instagram</a></li>
+                <li><a href="https://twitter.com/irreleviathan" target="_blank">twitter</a></li>
+                <br>
+                <li><a href="https://meadow.space/" target="_blank">meadow</a> (XR distribution platform)</li>
+                <li><a href="https://cobudget.com/" target="_blank">cobudget</a> (collaborative budgeting tool)</li>
+                <li><a href="https://babelbetween.us/" target="_blank">babel between us</a> (ethnographically + literature)</li>
+                <li><a href="http://www.skiljelinjer.se/" target="_blank">skiljelinjer</a> (antagonistic architecture research)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="post-list">
+        <ul>
+            <li><a href="{{ '/the-ship/' | relative_url }}">The Ship</a> (short story)</li>
+            <!-- <li><a href="path-to-post-2.html">Post Title 2</a></li> -->
+            <!-- Add more posts as needed -->
+        </ul>
+    </div>
+    
+
+</body>
+
+</html>
