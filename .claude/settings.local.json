@@ -5,7 +5,13 @@
       "Bash(rbenv:*)",
       "Bash(asdf:*)",
       "Bash(mise:*)",
-      "Bash(ruby:*)"
+      "Bash(ruby:*)",
+      "Bash(ffprobe:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(cwebp:*)",
+      "Bash(/opt/homebrew/bin/ffmpeg:*)",
+      "Bash(/usr/local/bin/ffmpeg:*)",
+      "Bash(brew --prefix:*)"
     ],
     "deny": [],
     "ask": []
