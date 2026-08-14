@@ -214,9 +214,8 @@ sitemap: false
 
         .copy em { font-style: italic; }
 
-        /* a paragraph that is entirely italic reads as the opening lede */
-        .copy p > em:only-child {
-            display: block;
+        /* a paragraph marked {: .lede} in the markdown reads as the opening line */
+        .copy p.lede {
             font-size: 1.03em;
             color: #d5d8cc;
         }

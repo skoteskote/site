@@ -1,4 +1,5 @@
 *You cannot hear each other, you cannot see each other, you can only feel each other's warmth.*
+{: .lede}
 
 Reach combines hand clay sculpting, traditional bronze casting, electronics, and spatial computing. The project consists of three bronzes connected through a virtual augmented reality layer. When you touch one sculpture, 300 temperature sensors inside pick up your touch and transmit it to the others, through AR, vibrations and sound.
 

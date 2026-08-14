@@ -20,7 +20,7 @@
 # Swap the order of the cells to move the image from the right to the left.
 #
 # In the markdown files:
-#   a paragraph that is entirely in *italics* becomes the opening lede
+#   a paragraph followed by a {: .lede} line becomes the brighter opening line
 #   a > blockquote becomes a pull quote, its last line the attribution
 #
 # bg: the background tint the page eases to while that image is on screen.
