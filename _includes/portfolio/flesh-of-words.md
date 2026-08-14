@@ -1,0 +1,7 @@
+Flesh of Words consists of a 5 x 2 meters large prosodic mirror – prosody being the study of the non-textual qualities of speech; pitch, volume, rhythm, cadence – that reflect what you say in front of it. Your words take shape, not as text, nor as renditions of their meaning, but as the material creatures carrying this meaning.
+
+Language is the malleable bond that binds us together, the connective tissue of society. This tissue is made of air, a materiality fundamental to both our survival and our communication. In that sense it is a shared flesh, a shared organ between all lunged creatures. An organ in both the intestinal and musical sense; an instrument we play to communicate with each other ~ words are vibrational creatures, born by us shaping air.
+
+Through technology we transpose these words to new materialities; stone, clay, papyrus, parchment, paper, pixels. This transposition changes their materiality, tone and presence are lost, while asynchronicity and timelessness are gained. Can we find ways of transposing the body — the non-conceptual flesh, the mucus, the ligaments — of our words into these new media?
+
+Flesh of Words can be experienced on the first floor of Kulturhuset in Stockholm, created as part of Rum för Språk (Room for Language), the inaugural exhibition of Språkmuseet – The Swedish Museum for Languages.

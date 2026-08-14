@@ -1,0 +1,5 @@
+An ongoing series of explorations of a photographic method I call *volumetric long exposure*: three-dimensional video and photography in which time and space are stretched until the artefacts and noise of the technology become visible. The method builds on modern volumetric video technology and 3D scanning and is carried out with purpose-built tools.
+
+Our society is measured by an ever denser field of sensors, whose readings are kept in vast archives of every moment that has ever taken place. The machine makes no difference between the moments it registers; it treats them all with the same reverence, labelling them, categorising them, sorting them into their assigned positions in a stubborn attempt at breaking the entropy of life.
+
+I use this technology to produce prints, videos, and real-time material for live shows. 

@@ -1,0 +1,539 @@
+---
+permalink: /portfolio/
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hidden for now: remove the line below to let search engines in. -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>Jakob Skote — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/SwampBoi.webp">
+    <style>
+        :root {
+            --bg: #10150f;
+            --bg-nav: rgba(16, 21, 15, 0.86);
+            --ink: #e9e7df;
+            --ink-dim: #9aa392;
+            --gutter: 7vw;
+            --nav-h: 58px;
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--ink);
+            font-family: Raleway, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overscroll-behavior-y: none;
+        }
+
+        img { display: block; width: 100%; height: auto; }
+
+        /* links carry no underline at rest, so the page stays free of lines */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        /* ---------- top bar ---------- */
+
+        #nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--bg-nav);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        #nav-inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: var(--nav-h);
+            padding: 0 var(--gutter);
+            overflow-x: auto;
+            scrollbar-width: none;
+            white-space: nowrap;
+        }
+
+        #nav-inner::-webkit-scrollbar { display: none; }
+
+        .nav-name {
+            position: absolute;
+            left: var(--gutter);
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            opacity: 0.85;
+        }
+
+        .nav-name a { color: inherit; text-decoration: none; }
+
+        /* auto margins centre the links and still allow horizontal scrolling
+           when they overflow, which justify-content: center does not */
+        #nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.9rem;
+            flex: none;
+            margin: 0 auto;
+        }
+
+        /* the current project is marked by weight and brightness alone */
+        #nav-links a {
+            color: var(--ink-dim);
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 0.02em;
+            padding: 4px 0;
+            transition: color 0.25s ease;
+        }
+
+        #nav-links a:hover { color: var(--ink); }
+
+        #nav-links a.active {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        /* ---------- page ---------- */
+
+        main {
+            padding: calc(var(--nav-h) + 7vh) var(--gutter) 0;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .project {
+            scroll-margin-top: calc(var(--nav-h) + 2vh);
+            padding-bottom: 24vh;
+        }
+
+        .project-head {
+            margin-bottom: 6rem;
+        }
+
+        .project-head h2 {
+            font-size: clamp(24px, 3.2vw, 40px);
+            font-weight: 700;
+            line-height: 1.15;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .project-head h2 .alt {
+            display: block;
+            font-weight: 400;
+            font-size: 0.62em;
+            color: var(--ink-dim);
+            margin-top: 0.45rem;
+            letter-spacing: 0;
+        }
+
+        /* ---------- rows ----------
+           full: one cell at the full content width
+           split: two equal columns
+           Both keep the same outer edges, so a full-width image lines up with
+           the square and the text column of a split row. */
+
+        .row { margin: 0 0 14vh; }
+
+        .row.split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2.5rem, 5vw, 5.5rem);
+            align-items: center;
+        }
+
+        .cell-image.square img { aspect-ratio: 1 / 1; object-fit: cover; }
+
+        .caption {
+            font-size: 12.5px;
+            color: var(--ink-dim);
+            letter-spacing: 0.02em;
+            margin-top: 0.9rem;
+            max-width: 34rem;
+        }
+
+        /* ---------- video ---------- */
+
+        .video {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        .video iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ---------- text ---------- */
+
+        /* Spacing rhythm: every gap on the page is either nothing (a plain new
+           line) or one blank line. 1lh is exactly one line box; the em value
+           before it is the fallback for browsers without the unit. */
+
+        .copy {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 15.5px;
+            line-height: 1.72;
+        }
+
+        .copy p {
+            margin: 0 0 1.72em;
+            margin-bottom: 1lh;
+        }
+
+        .copy p:last-child { margin-bottom: 0; }
+
+        .copy em { font-style: italic; }
+
+        /* a paragraph that is entirely italic reads as the opening lede */
+        .copy p > em:only-child {
+            display: block;
+            font-size: 1.03em;
+            color: #d5d8cc;
+        }
+
+        .copy blockquote {
+            margin: 0;
+            padding: 0;
+            font-style: italic;
+            color: var(--ink-dim);
+        }
+
+        .copy blockquote p {
+            margin: 0 0 1.72em;
+            margin-bottom: 1lh;
+        }
+
+        /* the last line of a quote is its attribution */
+        .copy blockquote p:last-child {
+            margin-bottom: 0;
+            font-style: normal;
+        }
+
+        /* ---------- credits block ---------- */
+
+        .meta {
+            font-family: Raleway, sans-serif;
+            font-size: 13.5px;
+            line-height: 1.65;
+            margin: 0 0 1.65em;
+            margin-bottom: 1lh;
+        }
+
+        .meta .title-line {
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        /* the medium sits directly under the title, on the next line */
+        .meta .medium {
+            font-style: italic;
+            color: var(--ink-dim);
+        }
+
+        .meta .credits {
+            margin: 1.65em 0 0;
+            margin-top: 1lh;
+            color: var(--ink);
+        }
+
+        .meta .credits .label { font-weight: 600; }
+
+        /* ---------- placeholders ---------- */
+
+        .placeholder {
+            background: rgba(233, 231, 223, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            color: var(--ink-dim);
+            font-size: 12.5px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .placeholder.wide { aspect-ratio: 3 / 2; }
+
+        .placeholder.square { aspect-ratio: 1 / 1; }
+
+        footer {
+            padding: 2rem 0 6rem;
+            font-size: 13px;
+            color: var(--ink-dim);
+            letter-spacing: 0.03em;
+        }
+
+        footer a { color: var(--ink-dim); }
+
+        /* ---------- mobile ---------- */
+
+        @media (max-width: 820px) {
+            :root { --gutter: 24px; }
+
+            #nav-inner { gap: 1.6rem; }
+
+            #nav-links { gap: 1.4rem; }
+
+            .nav-name { display: none; }
+
+            .project-head { margin-bottom: 3.5rem; }
+
+            .row.split {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .copy { font-size: 16px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="nav">
+        <div id="nav-inner">
+            <div class="nav-name"><a href="{{ site.baseurl }}/">Jakob Skote</a></div>
+            <div id="nav-links">
+                {%- for project in site.data.portfolio %}
+                <a href="#{{ project.id }}">{{ project.nav | default: project.title }}</a>
+                {%- endfor %}
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        {%- for project in site.data.portfolio %}
+        <section class="project" id="{{ project.id }}">
+
+            <div class="project-head">
+                <h2>{{ project.title }}{% if project.alt %}<span class="alt">{{ project.alt }}</span>{% endif %}</h2>
+            </div>
+
+            {%- for row in project.rows %}
+            <div class="row {{ row.layout }}">
+                {%- for cell in row.cells %}
+
+                {%- if cell.image %}
+                <figure class="cell cell-image{% if row.layout == 'split' %} square{% endif %}" style="margin:0">
+                    <img src="{{ site.baseurl }}/assets/portfolio/{{ cell.image }}"
+                         {% if cell.bg %}data-bg="{{ cell.bg }}"{% endif %}
+                         alt="{{ cell.alt }}" loading="lazy">
+                    {%- if cell.caption %}<figcaption class="caption">{{ cell.caption }}</figcaption>{% endif %}
+                </figure>
+
+                {%- elsif cell.video %}
+                <div class="cell cell-video">
+                    <div class="video">
+                        <iframe src="https://player.vimeo.com/video/{{ cell.video }}?h={{ cell.hash }}"
+                                title="{{ cell.title }}"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    {%- if cell.caption %}<div class="caption">{{ cell.caption }}</div>{% endif %}
+                </div>
+
+                {%- elsif cell.text %}
+                <div class="cell cell-text copy">
+                    <div class="meta">
+                        <div class="title-line">{{ project.title }}{% if project.year %}, {{ project.year }}{% endif %} |
+                            {%- if project.by_url %} <a href="{{ project.by_url }}" target="_blank" rel="noopener">{{ project.by }}</a>
+                            {%- else %} {{ project.by }}{% endif %}</div>
+                        {%- if cell.medium %}<div class="medium">{{ cell.medium }}</div>{% endif %}
+                        {%- if cell.meta %}
+                        <div class="credits">
+                            {%- for item in cell.meta %}
+                            <div><span class="label">{{ item.label }}</span> {{ item.value }}</div>
+                            {%- endfor %}
+                        </div>
+                        {%- endif %}
+                    </div>
+                    {%- assign text_path = 'portfolio/' | append: cell.text %}
+                    {%- capture text_md %}{% include {{ text_path }} %}{% endcapture %}
+                    {{ text_md | markdownify }}
+                </div>
+
+                {%- elsif cell.placeholder %}
+                <div class="cell cell-placeholder">
+                    <div class="placeholder {{ cell.ratio | default: 'wide' }}"
+                         {% if cell.bg %}data-bg="{{ cell.bg }}"{% endif %}>{{ cell.placeholder }}</div>
+                </div>
+                {%- endif %}
+
+                {%- endfor %}
+            </div>
+            {%- endfor %}
+
+        </section>
+        {%- endfor %}
+
+        <footer>
+            Jakob Skote — <a href="mailto:jakob@untold.garden">jakob@untold.garden</a> — <a href="{{ site.baseurl }}/">jakobskote.com</a>
+        </footer>
+
+    </main>
+
+    <script>
+        (function () {
+            var links = Array.prototype.slice.call(document.querySelectorAll('#nav-links a'));
+            var navInner = document.getElementById('nav-inner');
+            var sections = links.map(function (a) {
+                return document.getElementById(a.getAttribute('href').slice(1));
+            });
+            var lockUntil = 0;
+
+            function setActive(index) {
+                links.forEach(function (a, i) {
+                    a.classList.toggle('active', i === index);
+                });
+                // keep the active item visible when the bar scrolls horizontally
+                var active = links[index];
+                if (active && navInner.scrollWidth > navInner.clientWidth) {
+                    var left = active.offsetLeft - navInner.clientWidth / 2 + active.offsetWidth / 2;
+                    navInner.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+                }
+            }
+
+            function currentIndex() {
+                var navH = parseInt(getComputedStyle(document.documentElement)
+                    .getPropertyValue('--nav-h'), 10) || 58;
+                var line = window.scrollY + navH + window.innerHeight * 0.42;
+                var index = -1;
+                sections.forEach(function (section, i) {
+                    if (section && section.offsetTop <= line) index = i;
+                });
+                // last section wins once we hit the bottom of the page
+                if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+                    index = sections.length - 1;
+                }
+                return index;
+            }
+
+            /* ---------- background that drifts with the images ----------
+               Every image carries a data-bg tint, precomputed by
+               tools/portfolio-tints.py: the image is quantised to its most
+               common colours, the darkest of those that still holds a hue is
+               taken, and its brightness clamped so white text stays readable.
+               As you scroll, the page background eases between the tints of
+               the images above and below the middle of the viewport. */
+
+            var BASE = [16, 21, 15];
+            var root = document.documentElement;
+            var stops = [];
+
+            function parseHex(hex) {
+                var h = hex.replace('#', '');
+                return [
+                    parseInt(h.slice(0, 2), 16),
+                    parseInt(h.slice(2, 4), 16),
+                    parseInt(h.slice(4, 6), 16)
+                ];
+            }
+
+            function measureStops() {
+                var tinted = Array.prototype.slice.call(document.querySelectorAll('[data-bg]'));
+                stops = tinted.map(function (el) {
+                    var box = el.getBoundingClientRect();
+                    return {
+                        y: box.top + window.scrollY + box.height / 2,
+                        rgb: parseHex(el.getAttribute('data-bg'))
+                    };
+                }).sort(function (a, b) { return a.y - b.y; });
+                // start and end on the site's own green
+                stops.unshift({ y: 0, rgb: BASE });
+                stops.push({ y: document.body.scrollHeight, rgb: BASE });
+            }
+
+            function paintBackground() {
+                if (stops.length < 2) return;
+                var anchor = window.scrollY + window.innerHeight / 2;
+                var i = 0;
+                while (i < stops.length - 2 && stops[i + 1].y < anchor) i++;
+                var a = stops[i];
+                var b = stops[i + 1];
+                var span = b.y - a.y;
+                var t = span > 0 ? Math.min(1, Math.max(0, (anchor - a.y) / span)) : 0;
+                // ease so the colour lingers on each image and moves between them
+                t = t * t * (3 - 2 * t);
+                var rgb = [0, 1, 2].map(function (c) {
+                    return Math.round(a.rgb[c] + (b.rgb[c] - a.rgb[c]) * t);
+                });
+                root.style.setProperty('--bg', 'rgb(' + rgb.join(',') + ')');
+                root.style.setProperty('--bg-nav', 'rgba(' + rgb.join(',') + ',0.86)');
+            }
+
+            var ticking = false;
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(function () {
+                    ticking = false;
+                    paintBackground();
+                    if (Date.now() < lockUntil) return;
+                    setActive(currentIndex());
+                });
+            }
+
+            function remeasure() {
+                measureStops();
+                paintBackground();
+                setActive(currentIndex());
+            }
+
+            links.forEach(function (a, i) {
+                a.addEventListener('click', function () {
+                    // hold the clicked item highlighted while the smooth scroll runs
+                    lockUntil = Date.now() + 800;
+                    setActive(i);
+                });
+            });
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', remeasure);
+            window.addEventListener('load', remeasure);
+            // images settle their height as they decode, so re-measure then too
+            Array.prototype.forEach.call(document.images, function (img) {
+                if (!img.complete) img.addEventListener('load', remeasure);
+            });
+            remeasure();
+        })();
+    </script>
+
+</body>
+
+</html>

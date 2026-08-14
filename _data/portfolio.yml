@@ -1,0 +1,197 @@
+# ---------------------------------------------------------------------------
+# The portfolio at /portfolio/ is built entirely from this file.
+#
+# A project is a list of ROWS. A row has a layout and one or two CELLS.
+#   layout: full   -> a single cell spanning the full content width
+#   layout: split  -> two equal columns, vertically centred
+#
+# Each project carries its title, year and attribution. Those three make the
+# first line of the meta block: "Title, Year | By". Set by_url to link the name.
+#
+# A cell is one of:
+#   image:       filename in assets/portfolio/, plus alt, optional caption
+#   video:       a Vimeo id and hash (normal Vimeo embed, 16:9)
+#   text:        filename in _includes/portfolio/, plus the meta block above it
+#   placeholder: a line of text in a tinted frame, for material still to come
+#
+# Anything you can imagine falls out of that: two large images side by side is
+# a split with two image cells, two square images stacked in each column is two
+# split rows, two columns of text is a split with two text cells, and so on.
+# Swap the order of the cells to move the image from the right to the left.
+#
+# In the markdown files:
+#   a paragraph that is entirely in *italics* becomes the opening lede
+#   a > blockquote becomes a pull quote, its last line the attribution
+#
+# bg: the background tint the page eases to while that image is on screen.
+# Generate it for a new image with:  python3 tools/portfolio-tints.py
+# ---------------------------------------------------------------------------
+
+- id: ogonblicken
+  nav: Ögonblickens ofattbara mätbarhet
+  title: Ögonblickens ofattbara mätbarhet
+  alt: The Unfathomable Measurability of Moments
+  year: 2025
+  by: Jakob Skote
+  rows:
+    - layout: split
+      cells:
+        - image: ogonblick-1.webp
+          bg: "#221815"
+          alt: Volumetric long exposure print, two figures dissolving into light and noise
+        - text: ogonblicken.md
+          medium: Pigment prints | Volumetric long exposure
+          meta:
+            - label: Exhibited at
+              value: Brösarps Konsthall
+
+    - layout: full
+      cells:
+        - image: ogonblick-2.webp
+          bg: "#221816"
+          alt: Volumetric long exposure print, a seated figure stretched across time
+
+    - layout: full
+      cells:
+        - placeholder: Installation view, Brösarps Konsthall — image to come
+          ratio: wide
+
+- id: flesh-of-words
+  nav: Flesh of Words
+  title: Flesh of Words
+  alt: Sägningsväsen
+  year: 2025
+  by: Jakob Skote
+  rows:
+    - layout: full
+      cells:
+        - image: flesh-2.webp
+          bg: "#051a13"
+          alt: Creatures of speech rendered in pink and cream, drifting against a deep green ground
+
+    - layout: split
+      cells:
+        - image: flesh-1.webp
+          bg: "#141522"
+          alt: A visitor at a desk and another standing before the speech creatures on the gallery wall
+        - text: flesh-of-words.md
+          medium: Interactive installation, LED screen, ceiling-mounted microphones
+          meta:
+            - label: Commissioned by
+              value: Språkmuseet
+            - label: Exhibited at
+              value: Kulturhuset Stadsteatern
+
+    - layout: full
+      cells:
+        - image: flesh-3.webp
+          bg: "#151422"
+          alt: A visitor reaching a hand towards two clusters of speech creatures on the screen
+
+- id: reach
+  nav: Reach
+  title: Reach
+  year: 2024
+  by: Untold Garden
+  by_url: https://untold.garden/reach
+  rows:
+    - layout: full
+      cells:
+        - image: reach-2.webp
+          bg: "#0f1922"
+          alt: A visitor wearing an Apple Vision Pro headset holding two bronze sculptures
+
+    - layout: split
+      cells:
+        - image: reach-1.webp
+          bg: "#221b18"
+          alt: A hand with painted nails resting on the rippled surface of a bronze sculpture
+        - text: reach.md
+          medium: Bronze, electronics, augmented reality, Apple Vision Pro
+          meta:
+            - label: Exhibited at
+              value: PIVOTAL at Digitalism, Saatchi Gallery
+            - label: Curated by
+              value: Rebekah Tolley Georgiou
+
+    - layout: full
+      cells:
+        - image: reach-3.webp
+          bg: "#22140d"
+          alt: "View from inside the headset: two sculptures glowing orange and purple with transmitted body heat"
+          caption: View from inside the headset.
+
+    - layout: full
+      cells:
+        - video: "1050126792"
+          hash: bfcd5452a5
+          title: Reach
+
+    - layout: split
+      cells:
+        - image: reach-4.webp
+          bg: "#221b17"
+          alt: A visitor in a headset leaning over to hold a bronze sculpture in both arms
+        - image: reach-5.webp
+          bg: "#221e1f"
+          alt: A visitor in a headset with a hand on each of two bronze sculptures
+
+- id: det-langa-sorlet
+  nav: Det långa sorlet
+  title: Det långa sorlet
+  alt: Interspatial Echoes
+  year: 2023
+  by: Untold Garden
+  by_url: https://untold.garden/interspatial-echoes
+  rows:
+    - layout: full
+      cells:
+        - image: sorlet-2.webp
+          bg: "#202220"
+          alt: A vast cloud of words hovering above a city square in augmented reality
+
+    - layout: split
+      cells:
+        - image: sorlet-1.webp
+          bg: "#16181e"
+          alt: A visitor on a town square surrounded by floating letters seen through a phone
+        - text: det-langa-sorlet.md
+          medium: Social network, augmented reality, user-generated messages
+          meta:
+            - label: Commissioned by
+              value: Sveriges Konstföreningar
+            - label: Exhibited at
+              value: 160 town squares across Sweden
+
+    - layout: full
+      cells:
+        - video: "864454457"
+          hash: 3f006700ac
+          title: Det långa sorlet
+
+    - layout: full
+      cells:
+        - image: sorlet-3.webp
+          bg: "#222622"
+          alt: Pencil sketch of three figures on a square beneath a billowing cloud of handwritten words
+          caption: Early idea sketch of Det långa sorlet.
+
+- id: tools-for-conviviality
+  nav: Tools for Conviviality
+  title: Tools for Conviviality
+  year: in progress
+  by: Jakob Skote
+  rows:
+    - layout: split
+      cells:
+        - image: tfc-1.webp
+          bg: "#191a22"
+          alt: A very long table laid with white cloth running across a field at dusk, a van parked beside it
+        - text: tools-for-conviviality.md
+          medium: A new framing of a group of earlier projects
+
+    - layout: full
+      cells:
+        - image: tfc-2.webp
+          bg: "#202222"
+          alt: People seated along the full length of the table between tents, raising their hands

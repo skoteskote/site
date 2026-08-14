@@ -1,0 +1,5 @@
+Det långa sorlet is an experimental social network that can only be visited on urban squares around Sweden, displaying messages in a large flowing cloud above the visitor. You participate by writing your own messages and reading others, influencing the content and form of the word cloud.
+
+The project weaves together three different social aspects; digital communication, the square, and public art. The historical role of the square as a place for politics and gossip is augmented with modern communication technology, tying every town square in every major city in Sweden into one.
+
+The messages are spatially organised within the cloud according to physical laws translated into the world of the attention economy: how much a text has been read and answered affects its gravitational weight within the sculpture, which determines how the texts are positioned in relation to each other.
