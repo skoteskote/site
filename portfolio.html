@@ -125,6 +125,16 @@ sitemap: false
             margin: 0 auto;
         }
 
+        .notice {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--ink-dim);
+            text-align: center;
+            margin: 0 0 9vh;
+        }
+
         .project {
             scroll-margin-top: calc(var(--nav-h) + 2vh);
             padding-bottom: 24vh;
@@ -336,6 +346,8 @@ sitemap: false
     </nav>
 
     <main>
+
+        <p class="notice">portfolio page under construction, some things are a bit broken</p>
 
         {%- for project in site.data.portfolio %}
         <section class="project" id="{{ project.id }}">
